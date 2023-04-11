@@ -77,10 +77,6 @@ if img_file_buffer is not None:
     st.image(img, caption='Sunrise by the mountains')
 
 
-
-
-
-
 # Cria o cliente MQTT e o conecta ao broker
 client = mqtt.Client()
 client.username_pw_set(config("HIVEMQ_USERNAME"), config("HIVEMQ_PASSWORD"))
