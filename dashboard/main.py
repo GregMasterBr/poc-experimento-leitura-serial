@@ -33,6 +33,7 @@ def on_message(client, userdata, message):
     # Converte o payload da mensagem para string e atualiza o valor na interface
     data = str(message.payload.decode("utf-8"))
     topic = message.topic     
+    
     try:
         if topic=="sensor1":
             n = int(data) if data.isnumeric else 0
