@@ -6,7 +6,7 @@ import paho.mqtt.client as mqtt
 broker_url = "mqtt.tago.io"
 broker_port = 8883
 username = "Token"  # Substituir pelo seu usuário MQTT do TAGO IO
-password = "94624cfa-b7b7-43c8-853a-184b63a6ec42"  # Substituir pela sua senha MQTT do TAGO IO
+password = config("TAGO_IO_PASSWORD") # Substituir pela sua senha MQTT do TAGO IO
 from decouple import config, Csv
 # Cria o cliente MQTT e inicia o loop de leitura de mensagens
 client = mqtt.Client(client_id=config("TAGO_IO_NAME_DEVICE"))

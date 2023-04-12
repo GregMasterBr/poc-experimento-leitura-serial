@@ -1,4 +1,3 @@
-
 import serial
 import serial.tools.list_ports
 import paho.mqtt.client as mqtt
@@ -7,7 +6,7 @@ import time
 broker_url = "mqtt.tago.io"
 broker_port = 1883
 username = "token"  # Substituir pelo seu usuário MQTT do TAGO IO
-password = "94624cfa-b7b7-43c8-853a-184b63a6ec42"  # Substituir pela sua senha MQTT do TAGO IO
+password = config("TAGO_IO_PASSWORD")  # Substituir pela sua senha MQTT do TAGO IO
 
 # Função que lê dados do sensor e publica no broker MQTT
 def publish_sensor_data(sensor_port, topic):

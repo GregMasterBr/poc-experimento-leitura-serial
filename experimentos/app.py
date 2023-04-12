@@ -9,7 +9,7 @@ import serial
 # Create serial objects for each sensor
 sensor1 = serial.Serial(config("SENSOR_1"), config("SENSOR_1_BAUD"))
 sensor2 = serial.Serial(config("SENSOR_2"), config("SENSOR_2_BAUD"))
-#sensor3 = serial.Serial(config("SENSOR_3"), config("SENSOR_3_BAUD"))
+sensor3 = serial.Serial(config("SENSOR_3"), config("SENSOR_3_BAUD"))
 
 
 # with this callback you can see if your publish was successful
@@ -41,17 +41,14 @@ client.on_publish = on_publish
 
 while True:
     timestamp = time.time()
-    # Read data from sensor 1
     if sensor1.in_waiting > 0:
         data1 = sensor1.readline().decode('utf-8').rstrip()
         print(timestamp,"-->Sensor 1:", data1)
 
-    # Read data from sensor 2
     if sensor2.in_waiting > 0:
         data2 = sensor2.readline().decode('utf-8').rstrip()
         print(timestamp,"-->Sensor 2:", data2)
 
-    # Read data from sensor 3
-    #if sensor3.in_waiting > 0:
-        #data3 = sensor3.readline().decode('utf-8').rstrip()
-        #print(timestamp,"--> Sensor 3:", data3)
+    if sensor3.in_waiting > 0:
+        data3 = sensor3.readline().decode('utf-8').rstrip()
+        print(timestamp,"--> Sensor 3:", data3)
