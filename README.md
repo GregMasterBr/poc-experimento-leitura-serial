@@ -1,6 +1,8 @@
 # Projeto para demonstrar viabilidade do uso 5G em projetos IOTs utilizando o protocolo MQTT
 
-## Estrura da pasta do projeto (pastas)
+Transferência de dados utilizando uma Raspberry Pi 4B, adquirindo dados via as portas USBs de diferentes sensores, e transmitindo para um broker online via MQTT e uma dashboard (streamlit) buscando esses dados para exibição.
+
+## Estrura das pasta do projeto
 * Client - Código instalado no raspberry pi, no qual faz a leitura dos sensores e envia para o broker via MQTT
 * Sensores - Códigos de diferentes tipos de sensores que enviam seus dados via serial
 * Dashboard - Painel de visualização das transmissão dos dados em tempo real. O Painel faz a leitura direto do broker. 
